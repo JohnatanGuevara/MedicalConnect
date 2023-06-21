@@ -1,0 +1,52 @@
+<app-newheader></app-newheader>
+<div id="calendar" class="calendar-container"><div class='demo-app'>
+
+  <div class='demo-app-sidebar'>
+    <div class='demo-app-sidebar-section'>
+      <h2>Calendario</h2>
+      <ul>
+        <li>Para crear un nuevo evento, haz click en la fecha.</li>
+        <li>Puedes cambiar la fecha, solo arrastrando el evento a otro dia.</li>
+        <li>Selecciona el evento, si deseas eliminarlo</li>
+      </ul>
+    </div>
+    <div class='demo-app-sidebar-section'>
+      <label>
+        <input
+          type='checkbox'
+          [checked]='calendarVisible'
+          (change)='handleCalendarToggle()'
+        />
+       Mostrar todo el Calendario.
+      </label>
+    </div>
+    <div class='demo-app-sidebar-section'>
+      <label>
+        <input
+          type='checkbox'
+          [checked]='calendarOptions.weekends'
+          (change)='handleWeekendsToggle()'
+        />
+        Mostrar Fines de Semana.
+      </label>
+    </div>
+    <div class='demo-app-sidebar-section'>
+      <h2>Proximos eventos ({{currentEvents.length}})</h2>
+      <ul>
+        <li *ngFor='let event of currentEvents'>
+          <b>{{event.startStr}}</b>
+          <i>{{event.title}}</i>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class='demo-app-main'>
+    <full-calendar
+      *ngIf='calendarVisible'
+      [options]='calendarOptions'
+    ></full-calendar>
+  </div>
+
+</div>
+</div>

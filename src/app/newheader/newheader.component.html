@@ -1,0 +1,69 @@
+<html>
+  <head>
+ 
+  </head>
+  <div class="content-container">
+  <body><div class="area"></div><nav class="main-menu">
+            <ul>
+                <li>
+                    <a routerLink="/homePage">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                           Inicio
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a routerLink="/listapacientes">
+                        <i class="fa fa-user-md fa-2x"></i>
+                        <span class="nav-text">
+                           Pacientes
+                        </span>
+                    </a>
+                    
+                </li>
+                
+                <li class="has-subnav">
+                    <a routerLink="/consulta">
+                       <i class="fa fa-stethoscope fa-2x"></i>
+                        <span class="nav-text">
+                            Consultas
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a routerLink="/calendario">
+                        <i class="fa fa-list-alt fa-2x"></i>
+                        <span class="nav-text">
+                            Agenda
+                        </span>
+                    </a>
+                </li>
+               
+                
+                <li>
+                    <a routerLink="/perfil">
+                       <i class="fa fa-id-card fa-2x"></i>
+                        <span class="nav-text">
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a (click)="logout()">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Cerrar sesión
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+  </body>
+</div>
+    </html>
