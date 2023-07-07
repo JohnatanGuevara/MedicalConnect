@@ -6,7 +6,7 @@
     <meta name="keywords" content="Nuevo Paciente">
     <meta name="description" content="">
     <title>Recipe e Indicaciones</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)">
 <link rel="stylesheet" href="recipe-new.component.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>

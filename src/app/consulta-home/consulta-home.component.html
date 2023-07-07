@@ -6,8 +6,8 @@
     <meta name="keywords" content="Nuevo Paciente">
     <meta name="description" content="">
     <title>INICIO</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="consulta-home.component.css" media="screen">
+    <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)">
+
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.11.2, nicepage.com">

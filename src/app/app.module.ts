@@ -56,6 +56,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ParaclinicosComponent } from './ConsultaItems/paraclinicos/paraclinicos.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RecipeNewComponent } from './ConsultaItems/recipe-new/recipe-new.component';
+import { EVPREOPERATORIAComponent } from './ConsultaItems/evpreoperatoria/evpreoperatoria.component';
+import { NOTAOPERATORIAComponent } from './ConsultaItems/notaoperatoria/notaoperatoria.component';
 
 
 
@@ -87,6 +89,8 @@ const routes: Routes = [
   { path: '**', component: HomepageComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'datosfiliatorios/:id', component: DatosFiliatoriosComponent },
+  {path: 'evpreoperatoria', component: EVPREOPERATORIAComponent},
+  {path: 'notaoperatoria', component: NOTAOPERATORIAComponent}
   
 
 
@@ -132,7 +136,9 @@ const routerOptions: ExtraOptions = {
     ArchivosComponent,
     ParaclinicosComponent,
     PerfilComponent,
-    RecipeNewComponent
+    RecipeNewComponent,
+    EVPREOPERATORIAComponent,
+    NOTAOPERATORIAComponent
   ],
   imports: [
     BrowserModule,

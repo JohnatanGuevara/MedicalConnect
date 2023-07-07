@@ -5,20 +5,26 @@ import { PacientesService } from 'src/app/services/pacientes.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { AuthService } from 'src/app/services/auth.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-paraclinicos',
   templateUrl: './paraclinicos.component.html',
-  styleUrls: ['./paraclinicos.component.css', './nicepage.css'], 
+  styleUrls: ['./paraclinicos.component.css'], 
 })
 export class ParaclinicosComponent implements OnInit {
   @ViewChild('recipeTextarea') recipeTextarea!: ElementRef;
   @ViewChild('indicacionesTextarea') indicacionesTextarea!: ElementRef;
+  cssUrl!: string;
+
+  title='dinamic-styles';
   
   paciente: Paciente | null = null;
   usuario: User | null = null;
 
-  constructor(private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, private authService: AuthService) {}
+  constructor(private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, private authService: AuthService, public sanitizer: DomSanitizer) {
+    this.cssUrl = '/assets/nicepage.css'
+  }
 
   ngOnInit() {
     this.paciente = this.pacienteDataService.getPaciente();

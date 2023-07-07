@@ -8,13 +8,17 @@ import { Paciente } from 'src/app/models/models';
 import { Router } from '@angular/router';
 import { PacienteDataService } from '../paciente-data.service';
 import { ConsultasService } from '../services/consultas.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-consulta-home',
   templateUrl: './consulta-home.component.html',
-  styleUrls: ['./consulta-home.component.css', './nicepage.css']
+  styleUrls: ['./consulta-home.component.css']
 })
 export class ConsultaHOMEComponent {
+  cssUrl!: string;
+
+  title='dinamic-styles';
   historyForm!: FormGroup;
   userId: string = '';
   pacienteId: string = '';
@@ -34,8 +38,11 @@ export class ConsultaHOMEComponent {
     private route: ActivatedRoute,
     private pacienteDataService: PacienteDataService,
     private consultasService: ConsultasService,
-    private router: Router,
-  ) {}
+    private router: Router,public sanitizer: DomSanitizer
+  ) {
+
+    this.cssUrl = '/assets/nicepage.css'
+  }
 
   ngOnInit() {
     

@@ -8,6 +8,7 @@ import { Paciente } from 'src/app/models/models';
 import { PacienteDataService } from 'src/app/paciente-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { PacientesService } from 'src/app/services/pacientes.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 interface ImageInfo {
   name: string;
@@ -19,7 +20,7 @@ interface ImageInfo {
 @Component({
   selector: 'app-archivos',
   templateUrl: './archivos.component.html',
-  styleUrls: ['./ARCHIVOS.css', './nicepage.css']
+  styleUrls: ['./ARCHIVOS.css']
 })
 export class ArchivosComponent implements OnInit {
   paciente: Paciente | null = null;
@@ -27,9 +28,15 @@ export class ArchivosComponent implements OnInit {
   isLoading: boolean = false;
   isLoadingGet: boolean = false;
   imagesLab: ImageInfo[] = [];
+  cssUrl!: string;
+
+  title='dinamic-styles';
   
 
-  constructor(private storage: AngularFireStorage, private datePipe: DatePipe, private pacienteDataService: PacienteDataService, private pacientesService: PacientesService) {}
+  constructor(private storage: AngularFireStorage, private datePipe: DatePipe, private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, public sanitizer: DomSanitizer) {
+
+    this.cssUrl = '/assets/nicepage.css'
+  }
 
   ngOnInit() {
     this.paciente = this.pacienteDataService.getPaciente();
