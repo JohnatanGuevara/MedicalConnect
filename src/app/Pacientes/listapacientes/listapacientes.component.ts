@@ -3,13 +3,20 @@ import { PacientesService } from 'src/app/services/pacientes.service';
 import { Paciente } from 'src/app/models/models';
 import { PacienteDataService } from 'src/app/paciente-data.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+
+
+
+
 
 @Component({
   selector: 'app-listapacientes',
   templateUrl: './listapacientes.component.html',
-  styleUrls: ['./listapacientes.component.css', './nicepage.css']
+  styleUrls: ['./listapacientes.component.css']
 })
-export class ListapacientesComponent implements OnInit {
+export class ListapacientesComponent implements OnInit {cssUrl!: string;
+
+  title='dinamic-styles';
   pacientes: Paciente[] = [];
   pacienteSeleccionado: any;
   isLoading = false;
@@ -17,7 +24,7 @@ export class ListapacientesComponent implements OnInit {
  
 
 
-  constructor(private pacientesService: PacientesService, private pacienteDataServices: PacienteDataService, private router: Router) {}
+  constructor(public sanitizer: DomSanitizer,private pacientesService: PacientesService, private pacienteDataServices: PacienteDataService, private router: Router) {this.cssUrl = '/assets/nicepage.css'}
 
   ngOnInit() {
     this.getPacientes();

@@ -5,17 +5,23 @@ import { PacientesService } from 'src/app/services/pacientes.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { AuthService } from 'src/app/services/auth.service';
+import { DomSanitizer } from '@angular/platform-browser';
+ 
+
+
 
 @Component({
   selector: 'app-pdf1-prueba',
   templateUrl: './pdf1-prueba.component.html',
-  styleUrls: ['./pdf1-prueba.component.css', './nicepage.css']
+  styleUrls: ['./pdf1-prueba.component.css']
 })
-export class Pdf1PruebaComponent {
+export class Pdf1PruebaComponent { cssUrl!: string;
+
+  title='dinamic-styles';
   paciente: Paciente | null = null;
   usuario: User | null = null;
 
-  constructor(private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, private authService: AuthService) {}
+  constructor(public sanitizer: DomSanitizer,private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, private authService: AuthService) {this.cssUrl = '/assets/nicepage.css'}
 
   ngOnInit() {
     

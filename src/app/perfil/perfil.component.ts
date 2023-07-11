@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/models';
 import { AuthService } from '../services/auth.service';
+import { DomSanitizer } from '@angular/platform-browser';
+ 
+
+
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css', './nicepage.css']
+  styleUrls: ['./perfil.component.css']
 })
-export class PerfilComponent implements OnInit {
+export class PerfilComponent implements OnInit { cssUrl!: string;
+
+  title='dinamic-styles';
   usuario: User = {
     nombres: '',
     apellidos: '',
@@ -24,7 +30,7 @@ export class PerfilComponent implements OnInit {
     Merito: '',
   };
 
-  constructor(private authService: AuthService) {}
+  constructor(public sanitizer: DomSanitizer,private authService: AuthService) {this.cssUrl = '/assets/nicepage.css'}
 
   ngOnInit() {
     // Obtener los datos del usuario actual y asignarlos al objeto usuario

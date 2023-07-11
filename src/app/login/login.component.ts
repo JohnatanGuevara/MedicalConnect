@@ -3,13 +3,18 @@ import { FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { User, UserLogin } from 'src/app/models/models';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./nicepage.css', 'Login-Template-2.css']
+  styleUrls: [ 'Login-Template-2.css']
 })
 export class LoginComponent {
+
+  cssUrl!: string;
+
+  title='dinamic-styles';
 
   loginForm: any;
   usuarioLogin: UserLogin = {
@@ -22,7 +27,7 @@ export class LoginComponent {
 
 isLoading: boolean = false;
 
-  constructor ( private pf:FormBuilder, private _AuthService: AuthService, private router:Router){
+  constructor ( private pf:FormBuilder, private _AuthService: AuthService, private router:Router, public sanitizer: DomSanitizer){
 
     this.loginForm = this.pf.group({
      
@@ -31,6 +36,8 @@ isLoading: boolean = false;
       password: ['', [Validators.required, Validators.minLength(6)]],
       
     });
+
+    this.cssUrl = '/assets/nicepage.css'
 
 
   }

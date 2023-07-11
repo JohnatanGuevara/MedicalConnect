@@ -7,13 +7,20 @@ import { Route, Router } from '@angular/router';
 import { Firestore } from '@angular/fire/firestore';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { DocumentReference } from '@angular/fire/compat/firestore';
+import { DomSanitizer } from '@angular/platform-browser';
+  
+
+
+
 
 @Component({
   selector: 'app-nuevo-paciente',
   templateUrl: './nuevo-paciente.component.html',
-  styleUrls: ['./nicepage.css', 'NuevoPaciente.css']
+  styleUrls: [ 'NuevoPaciente.css']
 })
-export class NuevoPacienteComponent {
+export class NuevoPacienteComponent {cssUrl!: string;
+
+  title='dinamic-styles';
 
   isFormValid  = false;
 
@@ -86,9 +93,9 @@ export class NuevoPacienteComponent {
   savePaciente!: NuevoPacienteComponent;
   pacienteId!: '';
 
-  constructor(private pf: FormBuilder, private _PacientesService: PacientesService, private afAuth: AngularFireAuth, private router:Router, private firestore:AngularFirestore) {
+  constructor(public sanitizer: DomSanitizer,private pf: FormBuilder, private _PacientesService: PacientesService, private afAuth: AngularFireAuth, private router:Router, private firestore:AngularFirestore) {
 
-    
+    this.cssUrl = '/assets/nicepage.css'
   }
 
   ngOnInit() {

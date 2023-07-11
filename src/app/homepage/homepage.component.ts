@@ -6,21 +6,27 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+
+
+
 
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css', './nicepage.css']
+  styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit { cssUrl!: string;
+
+  title='dinamic-styles';
   @ViewChild('recipeTextarea') recipeTextarea!: ElementRef;
   @ViewChild('indicacionesTextarea') indicacionesTextarea!: ElementRef;
   
   paciente: Paciente | null = null;
   usuario: User | null = null;
 
-  constructor(private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, private authService: AuthService, private router: Router) {}
+  constructor(public sanitizer: DomSanitizer, private pacienteDataService: PacienteDataService, private pacientesService: PacientesService, private authService: AuthService, private router: Router) {this.cssUrl = '/assets/nicepage.css'}
 
   ngOnInit() {
     this.paciente = this.pacienteDataService.getPaciente();
