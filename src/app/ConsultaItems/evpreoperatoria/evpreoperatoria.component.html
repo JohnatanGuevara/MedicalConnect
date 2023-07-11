@@ -1,3 +1,5 @@
+<app-newheader></app-newheader>
+<app-header-consulta></app-header-consulta>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,6 +7,7 @@
     <meta name="keywords" content="Info. y Antecedentes​">
     <meta name="description" content="">
     <title>INFO Y ANTECEDENTES</title>
+    <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)">
     
 <link rel="stylesheet" href="evpreoperatoria.component.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -37,35 +40,35 @@
       
                   
             <div class="u-form-group u-form-input-layout-vertical u-form-textarea u-label-top u-form-group-2">
-              <textarea rows="4" cols="50" id="textarea-16b8" name="textarea-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
+              <textarea #diagnosticoTextarea rows="4" cols="50" id="textarea-16b8" name="textarea-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
             </div>
             <div class="u-form-group u-form-input-layout-horizontal u-form-textarea u-label-top u-form-group-3">
               <label for="textarea-3f26" class="u-custom-font u-font-montserrat u-label u-label-3">Cirugía propuesta:</label>
-              <textarea rows="4" cols="50" id="textarea-3f26" name="textarea" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
+              <textarea #cirugiaTextarea rows="4" cols="50" id="textarea-3f26" name="textarea" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
             </div>
             <div class="u-form-group u-form-input-layout-horizontal u-label-top u-form-group-7">
               <label for="text-a364" class="u-custom-font u-font-montserrat u-label u-label-6">Cirujano(A):</label>
-              <input type="text" placeholder="" id="text-a364" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white">
+              <input #cirujanoTextarea type="text" placeholder="" id="text-a364" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white">
             </div>
             <div class="u-form-checkbox-group u-form-group u-form-input-layout-horizontal u-label-top u-form-group-4">
               <label class="u-custom-font u-font-montserrat u-label u-label-4">Antecedentes:</label>
               
             <div class="u-form-group u-form-input-layout-horizontal u-form-textarea u-label-top u-form-group-5">
              
-              <textarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
+              <textarea #antecedentesTextarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
             </div>
             <div class="u-form-checkbox-group u-form-group u-form-input-layout-horizontal u-label-top u-form-group-4">
               <label class="u-custom-font u-font-montserrat u-label u-label-4">Examen Físico:</label>
               
             <div class="u-form-group u-form-input-layout-horizontal u-form-textarea u-label-top u-form-group-5">
              
-              <textarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
+              <textarea #examenTextarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
             </div>
            
             
             <div class="u-form-group u-form-input-layout-horizontal u-label-top u-form-group-8">
               <label for="text-5ca7" class="u-custom-font u-font-montserrat u-label u-label-7">ASA:</label>
-              <select id="text-5ca7" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white">
+              <select #asaTextarea id="text-5ca7" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white">
                 <option value="I" data-calc="I">I</option>
                   <option value="II" data-calc="II">II</option>
                   <option value="III" data-calc="III">III</option>
@@ -77,7 +80,7 @@
             </div>
             <div class="u-form-group u-form-input-layout-horizontal u-label-top u-form-group-9">
               <label for="text-c890" class="u-custom-font u-font-montserrat u-label u-label-8">GOLDMAN:</label>
-              <select id="text-5ca7" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white">
+              <select #goldmanTextarea id="text-5ca7" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white">
                 <option value="I" data-calc="I">I</option>
                   <option value="II" data-calc="II">II</option>
                   <option value="III" data-calc="III">III</option>
@@ -91,12 +94,12 @@
               
             <div class="u-form-group u-form-input-layout-horizontal u-form-textarea u-label-top u-form-group-5">
              
-              <textarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
+              <textarea #conclusionesTextarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-24 u-white" required=""></textarea>
             </div>
            
             
             <div class="u-align-center u-form-group u-form-submit u-label-top">
-              <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-montserrat u-radius-22 u-btn-1">IMPRIMIR</a>
+              <button (click)="generarPDF()" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-montserrat u-radius-22 u-btn-1">IMPRIMIR</button>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
             <div class="u-form-send-message u-form-send-success"> Gracias! Tu mensaje ha sido enviado. </div>

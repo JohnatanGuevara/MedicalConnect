@@ -1,3 +1,6 @@
+<app-newheader></app-newheader>
+<app-header-consulta></app-header-consulta>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="es"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,6 +8,7 @@
     <meta name="keywords" content="Datos de Consulta​">
     <meta name="description" content="">
     <title>DatosDeConsulta</title>
+    <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)">
  
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -34,21 +38,21 @@
            
             <div class="u-form-group u-form-input-layout-vertical u-form-textarea u-label-top u-form-group-2">
               <label for="textarea-16b8" class="u-custom-font u-font-montserrat u-label u-label-2">Diagnóstico preoperatorio:</label>
-              <textarea rows="4" cols="50" id="textarea-16b8" name="textarea-1" class="u-input u-input-rectangle u-radius-24" required=""></textarea>
+              <textarea #diagnosticopreTextarea rows="4" cols="50" id="textarea-16b8" name="textarea-1" class="u-input u-input-rectangle u-radius-24" required=""></textarea>
             </div>
            
            
             <div class="u-form-group u-form-input-layout-horizontal u-form-textarea u-label-top u-form-group-12">
               <label for="textarea-3f26" class="u-custom-font u-font-montserrat u-label u-label-11">Diagnóstico postoperatorio:</label>
-              <textarea rows="4" cols="50" id="textarea-3f26" name="textarea" class="u-input u-input-rectangle u-radius-24" required=""></textarea>
+              <textarea #diagnosticoposTextarea rows="4" cols="50" id="textarea-3f26" name="textarea" class="u-input u-input-rectangle u-radius-24" required=""></textarea>
             </div>
             <div class="u-form-group u-form-input-layout-horizontal u-form-textarea u-label-top u-form-group-13">
               <label for="textarea-ecc5" class="u-custom-font u-font-montserrat u-label u-label-12">Hallazgos operatorios:</label>
-              <textarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-input u-input-rectangle u-radius-24" required=""></textarea>
+              <textarea #hallazgosTextarea rows="4" cols="50" id="textarea-ecc5" name="textarea-2" class="u-input u-input-rectangle u-radius-24" required=""></textarea>
             </div>
             
             <div class="u-align-center u-form-group u-form-submit u-label-top">
-              <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-montserrat u-radius-22 u-btn-1">IMPRIMIR</a>
+              <button (click)="generarPDF()" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-font u-font-montserrat u-radius-22 u-btn-1">IMPRIMIR</button>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
             <div class="u-form-send-message u-form-send-success"> Gracias! Tu mensaje ha sido enviado. </div>

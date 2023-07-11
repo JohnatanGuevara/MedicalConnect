@@ -37,7 +37,7 @@
             <div class="u-align-left u-container-style u-group u-preserve-proportions u-radius-15 u-shape-round u-white u-group-2">
               <div class="u-container-layout u-container-layout-2">
                 <div class="u-form u-form-1">
-                  <form (ngSubmit)="actualizarPaciente()" action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                  <form (ngSubmit)="actualizarPaciente()"  class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
                     <div class="u-form-group u-form-message u-label-none u-form-group-1">
                       <label for="message-1ccc" class="u-label">Mensaje</label>
                       <textarea #recipeTextarea [(ngModel)]="paciente.RECIPE" (input)="onRecipeInput($event)" rows="20" cols="50" id="message-1ccc" name="message" class="u-border-none u-custom-font u-font-montserrat u-input u-input-rectangle u-input-2" required="" placeholder="Récipe"></textarea>

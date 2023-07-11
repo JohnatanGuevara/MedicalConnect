@@ -74,6 +74,8 @@ const routes: Routes = [
   { path: 'listapacientes', component: ListapacientesComponent},
   {path: 'detalles', component: DetallesComponent},
   {path: 'recipeNEW', component: RecipeNewComponent},
+  {path: 'evpreoperatoria', component: EVPREOPERATORIAComponent},
+  {path: 'notaoperatoria', component: NOTAOPERATORIAComponent},
  
 
   {path: 'calendario', component: CalendarioComponent},
@@ -89,8 +91,7 @@ const routes: Routes = [
   { path: '**', component: HomepageComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'datosfiliatorios/:id', component: DatosFiliatoriosComponent },
-  {path: 'evpreoperatoria', component: EVPREOPERATORIAComponent},
-  {path: 'notaoperatoria', component: NOTAOPERATORIAComponent}
+
   
 
 
