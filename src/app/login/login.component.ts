@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: [ 'Login-Template-2.css']
+  styleUrls: [ 'login.component.css']
 })
 export class LoginComponent {
 
