@@ -75,7 +75,7 @@ export class EVPREOPERATORIAComponent {
       pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight, '', 'FAST');
     
       pdf.setFont('Montserrat');
-      pdf.setFontSize(8);
+      pdf.setFontSize(10);
     
       const nombres = this.paciente?.nombres || '';
       const apellidos = this.paciente?.apellidos || '';
@@ -86,22 +86,22 @@ export class EVPREOPERATORIAComponent {
       
   
   
-     const consultaMarginTop = + 50;
+     const consultaMarginTop = + 35;
      const consultaMarginLeft = + 20;
      const maxWidth = 170;
      
   
   
-     pdf.text(`- Diagnóstico: ${diagnosticoElement}`, consultaMarginLeft, consultaMarginTop, { maxWidth:  170 });
-     pdf.text(`- Cirugía propuesta: ${cirugiaElement}`, consultaMarginLeft, consultaMarginTop + 30, { maxWidth:  170 });
+     pdf.text(`- Diagnóstico: ${diagnosticoElement}`, consultaMarginLeft, consultaMarginTop +15, { maxWidth:  170 });
+     pdf.text(`- Cirugía propuesta: ${cirugiaElement}`, consultaMarginLeft, consultaMarginTop + 30, { maxWidth:  170 }); 
      pdf.text(`- Cirujano: ${cirujanoElement} `, consultaMarginLeft, consultaMarginTop + 45, { maxWidth:  170 });
     
      pdf.text(`- Antecedentes: ${antecedentesElement}`,consultaMarginLeft, consultaMarginTop + 55, { maxWidth:  170 });
     
-     pdf.text(`- Examen físico: ${examenElement}`,consultaMarginLeft, consultaMarginTop + 105, { maxWidth:  170 });
-     pdf.text(`- ASA: ${asaElement}`,consultaMarginLeft, consultaMarginTop + 155, { maxWidth:  170 });
-     pdf.text(`- GOLDMAN: ${goldmanElement}`,consultaMarginLeft, consultaMarginTop + 165, { maxWidth:  170 });
-     pdf.text(`- Conclusiones: ${conclusionesElement}`,consultaMarginLeft, consultaMarginTop + 175, { maxWidth:  170 });
+     pdf.text(`- Examen físico: ${examenElement}`,consultaMarginLeft, consultaMarginTop + 95, { maxWidth:  170 });
+     pdf.text(`- ASA: ${asaElement}`,consultaMarginLeft, consultaMarginTop + 145, { maxWidth:  170 });
+     pdf.text(`- GOLDMAN: ${goldmanElement}`,consultaMarginLeft, consultaMarginTop + 155, { maxWidth:  170 });
+     pdf.text(`- Conclusiones: ${conclusionesElement}`,consultaMarginLeft, consultaMarginTop + 165, { maxWidth:  170 });
 
      
      

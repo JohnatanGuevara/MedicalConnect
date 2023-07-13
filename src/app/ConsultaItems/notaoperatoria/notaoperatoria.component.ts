@@ -65,7 +65,7 @@ usuario: User | null = null;
     pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight, '', 'FAST');
   
     pdf.setFont('Montserrat');
-    pdf.setFontSize(8);
+    pdf.setFontSize(10);
   
     const nombres = this.paciente?.nombres || '';
     const apellidos = this.paciente?.apellidos || '';
@@ -83,8 +83,8 @@ usuario: User | null = null;
 
 
    pdf.text(`- Diagnóstico preoperatorio: ${diagnosticopreElement}`, consultaMarginLeft, consultaMarginTop, { maxWidth:  170 });
-   pdf.text(`- Diagnóstico posoperatorio: ${diagnosticoposElement}`, consultaMarginLeft, consultaMarginTop + 50, { maxWidth:  170 });
-   pdf.text(`- Hallazgos operatorios: ${hallazgosElement} `, consultaMarginLeft, consultaMarginTop + 95, { maxWidth:  170 });
+   pdf.text(`- Diagnóstico posoperatorio: ${diagnosticoposElement}`, consultaMarginLeft, consultaMarginTop + 20, { maxWidth:  170 });
+   pdf.text(`- Hallazgos operatorios: ${hallazgosElement} `, consultaMarginLeft, consultaMarginTop + 40, { maxWidth:  170 });
   
    
 
